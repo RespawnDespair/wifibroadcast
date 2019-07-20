@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-
 import os
 from setuptools import setup, find_packages, command
 import distutils.command.bdist_rpm as orig
 import setuptools.command.bdist_rpm as orig2
+
 
 class bdist_rpm(orig.bdist_rpm):
     """
@@ -69,7 +69,8 @@ setup(
                                       'wfb-test-latency=telemetry.latency_test:main']},
     package_data={'telemetry.conf': ['master.cfg', 'site.cfg']},
     data_files = [('/usr/bin', ['wfb_tx', 'wfb_rx', 'wfb_keygen']),
-                  ('/lib/systemd/system', ['scripts/wifibroadcast.service',
+                  ('/lib/systemd/system', ['scripts/storm32.service',
+                                           'scripts/wifibroadcast.service',
                                            'scripts/wifibroadcast@.service']),
                   ('/etc/default', ['scripts/default/wifibroadcast'])],
 
